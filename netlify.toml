@@ -1,0 +1,9 @@
+[build]
+  command = "node scripts/check-build.mjs"
+  publish = "dist"
+
+# Client navigation uses hashes (#demo, #overview, #sheets), so no SPA rewrite is needed.
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"

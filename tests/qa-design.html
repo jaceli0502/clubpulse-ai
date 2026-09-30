@@ -1,0 +1,5 @@
+<!doctype html><meta charset="utf-8"><title>Local responsive design review</title>
+<style>body{margin:0;background:#e7e9e7;font:14px Arial}header{padding:8px;position:sticky;top:0;background:white;z-index:100}iframe{display:block;border:0;width:390px;height:900px;background:white;margin:12px}select,button{padding:8px} </style>
+<header><label>Viewport width <select id="size"><option>390</option><option>768</option><option>1280</option><option>1440</option></select></label> <label>Screen <select id="route"><option>home</option><option>demo</option><option>data</option><option>sheets</option><option>import</option><option>overview</option><option>predict</option><option>method</option></select></label><button id="open">Show screen</button></header>
+<iframe title="ClubPulse responsive preview" src="/#home"></iframe>
+<script>const frame=document.querySelector('iframe');document.querySelector('#size').onchange=e=>frame.style.width=e.target.value+'px';document.querySelector('#open').onclick=()=>frame.src='/#'+document.querySelector('#route').value;</script>
