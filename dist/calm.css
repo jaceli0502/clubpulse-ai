@@ -158,3 +158,48 @@ table{font-size:14px}th{text-transform:none;letter-spacing:0;color:var(--color-t
 @media(max-width:600px){.template-options{grid-template-columns:1fr;gap:24px}.demo-intro h1{font-size:36px}.hero-actions .button{width:100%}.demo-conversion .button{display:flex;margin-bottom:20px}}
 .insight-evidence{margin:32px 0 64px}.attendance-plot{position:relative;height:360px;margin-top:24px}.attendance-plot svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.attendance-line{stroke:var(--color-brand);stroke-width:2.5;vector-effect:non-scaling-stroke;fill:none;stroke-linejoin:round}.attendance-grid{stroke:var(--color-border);stroke-width:1;vector-effect:non-scaling-stroke}.axis-title{position:absolute;top:-12px;font-size:12px;color:var(--color-text-muted)}.attendance-tick{position:absolute;left:0;width:6%;text-align:right;font-size:12px;transform:translateY(-50%);color:var(--color-text-muted)}.attendance-point{position:absolute;transform:translate(-50%,-50%);padding:0;width:24px;height:24px;min-height:0;border:0;background:transparent;border-radius:50%;display:grid;place-items:center}.attendance-point span{width:7px;height:7px;border:1.5px solid var(--color-brand);background:var(--color-surface);border-radius:50%}.attendance-point:hover,.attendance-point[aria-pressed=true]{background:var(--color-brand-soft)}.attendance-point[aria-pressed=true] span{background:var(--color-brand)}.attendance-date{position:absolute;top:94%;font-size:12px;white-space:nowrap;color:var(--color-text-muted);transform:translateX(-50%)}.attendance-date.date-0{transform:none}.attendance-date.date-2{transform:translateX(-100%)}.chart-meeting-label{max-width:530px;display:block;font-size:13px}.chart-meeting-label select{width:100%;margin-top:6px}.meeting-tooltip{display:flex;flex-wrap:wrap;gap:6px 24px;background:var(--color-brand-soft);padding:16px 20px;margin-top:12px;border-radius:var(--radius-sm);font-size:14px;min-height:56px}.attendance-comparison{margin:32px 0 48px;padding-top:24px;border-top:1px solid var(--color-border)}.attendance-comparison h3{font-size:24px}.attendance-comparison>p{max-width:780px}.comparison-periods{display:flex;align-items:center;gap:32px;margin:24px 0}.comparison-periods>div{display:grid;gap:8px}.comparison-periods strong{font:550 46px/1.1 Manrope,var(--font);font-variant-numeric:tabular-nums;color:var(--color-brand)}.comparison-periods small{color:var(--color-text-muted);font-size:12px}.comparison-arrow{font-size:28px;color:var(--color-text-muted)}.meeting-history{border-top:1px solid var(--color-border);padding-top:32px}.history-heading{display:flex;justify-content:space-between;gap:20px}.history-heading>span{white-space:nowrap;color:var(--color-text-muted)}.history-scroll{overflow:auto;max-height:540px;border-bottom:1px solid var(--color-border)}.history-scroll table{width:100%;min-width:460px}.history-scroll th{position:sticky;top:0;z-index:1;background:var(--color-bg);white-space:nowrap}.history-scroll td{max-width:260px;min-width:110px;white-space:normal}.history-scroll .numeric{text-align:right;font-variant-numeric:tabular-nums}.history-note{min-width:220px}.history-note p{overflow-wrap:anywhere}.history-expand{margin-top:16px}.notice-story .notice-grid{grid-template-columns:1fr 1fr}.notice-story .notice-grid small{color:var(--color-text-muted)}
 @media(max-width:600px){.attendance-plot{height:280px}.comparison-periods{gap:16px}.comparison-periods strong{font-size:36px}.comparison-periods>div{flex:1;min-width:0}.comparison-periods small{line-height:1.5}.history-heading{display:block}.meeting-tooltip{display:grid}.notice-story .notice-grid{grid-template-columns:1fr}.attendance-point{width:28px;height:28px}.attendance-date{font-size:11px}}
+
+/* Attendance and inspection share space, but never interaction state. */
+.insight-evidence{margin:24px 0 48px}
+.attendance-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:start}
+.attendance-chart,.meeting-inspector{min-width:0}
+.attendance-chart>.footnote{margin:8px 0 0}
+.meeting-inspector{border-top:1px solid var(--color-border);padding-top:24px}
+.meeting-inspector h3{font-size:18px;margin:0 0 8px}
+.inspector-help{font-size:13px;line-height:1.5;margin:0 0 12px;max-width:320px}
+.meeting-inspector .chart-meeting-label{max-width:none}
+.meeting-inspector select{width:100%;min-width:0;max-width:100%;font-size:13px;margin:0;white-space:nowrap;text-overflow:ellipsis}
+.meeting-details{margin-top:20px;overflow-wrap:anywhere}
+.inspector-date{font-size:13px;margin:0 0 6px;color:var(--color-text-muted)}
+.inspector-name{font-size:17px;font-weight:550;line-height:1.4;margin:0 0 12px;color:var(--color-text)}
+.inspector-attendance{display:flex;align-items:baseline;gap:8px;margin:12px 0 8px;color:var(--color-text-muted);font-size:13px}
+.inspector-attendance strong{font:550 48px/1.1 Manrope,var(--font);letter-spacing:-2px;font-variant-numeric:tabular-nums;color:var(--color-brand)}
+.inspector-members{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;margin:0 0 20px}
+.inspector-members strong{font-weight:600;color:var(--color-text)}
+.inspector-metadata{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;margin:20px 0 0;padding-top:16px;border-top:1px solid var(--color-border)}
+.inspector-metadata dt,.inspector-notes h5{font-size:11px;font-weight:400;color:var(--color-text-muted);margin:0 0 4px}
+.inspector-metadata dd{font-size:13px;line-height:1.45;color:var(--color-text);margin:0}
+.inspector-wide{grid-column:1/-1}
+.inspector-notes{margin-top:16px}.inspector-notes p{font-size:13px;line-height:1.5;margin:0;white-space:pre-wrap}
+.attendance-comparison{margin:32px 0 40px;padding-top:24px}.attendance-comparison>p:last-child{margin-bottom:0}
+.meeting-history{padding-top:24px}
+.demo-narrative .page-heading{margin-bottom:24px}.demo-narrative .next-idea{padding:24px}.demo-narrative .next-idea>h2{margin-bottom:12px}
+.demo-narrative .notice-grid{margin:24px 0}.demo-narrative .demo-conversion{padding:28px 0;margin-top:40px}
+.demo-intro{padding-bottom:32px}.demo-intro-story{gap:32px;margin:32px 0}
+@media(min-width:1100px){
+ .attendance-layout{grid-template-columns:minmax(0,2.45fr) minmax(280px,1fr);gap:28px;margin-top:20px}
+ .meeting-inspector{border-top:0;border-left:1px solid var(--color-border);padding:0 0 0 24px}
+}
+@media(max-width:600px){
+ .inspector-metadata{grid-template-columns:1fr;gap:14px}.inspector-wide{grid-column:auto}
+ .attendance-layout{gap:24px}.meeting-inspector{padding-top:20px}
+ .insight-evidence{margin-bottom:40px}.demo-intro-story{gap:24px;margin:28px 0}
+}
+.attendance-layout>.attendance-comparison{margin:8px 0 40px}
+@media(min-width:1100px){
+ .attendance-layout{grid-template-areas:"chart inspector" "comparison inspector";row-gap:24px}
+ .attendance-chart{grid-area:chart}.meeting-inspector{grid-area:inspector}
+ .attendance-layout>.attendance-comparison{grid-area:comparison;margin:0 0 40px}
+ .attendance-layout .comparison-periods{gap:24px;margin:20px 0}
+ .attendance-layout .comparison-periods strong{font-size:40px}
+}
