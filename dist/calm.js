@@ -2,7 +2,7 @@
 export function calmView({page,root,rows}){
   if(page==='overview'){
     root.querySelector('.notice')?.remove();
-    root.querySelector('.page-heading h1').textContent='What should I notice?';root.querySelector('#notice-story > h2')?.remove();
+    root.querySelector('.page-heading h1').textContent='What should I notice?';
     const metrics=root.querySelector('.metrics');if(metrics){const detail=document.createElement('details');detail.className='summary-metrics';detail.innerHTML='<summary>Meeting summary</summary>';metrics.replaceWith(detail);detail.append(metrics)}
     const ask=root.querySelector('.ask-card'),chips=ask?.querySelector('.question-chips'),form=ask?.querySelector('form');if(chips&&form)form.after(chips);
     const askSummary=root.querySelector('.ask-disclosure>summary');if(askSummary)askSummary.innerHTML='Ask ClubPulse <span>Explore the evidence behind your meeting history</span>';if(ask?.querySelector('h2'))ask.querySelector('h2').textContent='What do you want to understand?';
@@ -11,6 +11,7 @@ export function calmView({page,root,rows}){
     const download=root.querySelector('#health-report');if(download){const details=document.createElement('details');details.innerHTML='<summary>Reports and data</summary>';download.parentElement.before(details);details.append(download.parentElement)}
   }
   if(page==='predict'){
+    if(root.querySelector('[data-planner]'))return;
     root.querySelector('.notice')?.remove();
     const form=root.querySelector('#predict-form');if(!form)return;
     const meeting=document.createElement('fieldset'),promotion=document.createElement('fieldset');

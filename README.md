@@ -4,13 +4,17 @@ The existing static HTML/CSS/ES-module application and Import / Demo home were p
 
 ## September UX and data upgrade
 
-Home offers Analyze My Club and Explore Demo. The import page offers direct meeting entry first, followed by spreadsheet upload and templates. Both paths open the same editable, automatically saved meeting table. Demo is one continuous walkthrough with an inline planner and an isolated sample workspace; leaving Demo restores the user's own data. Google Sheets uses export/upload, not live OAuth sync. CSV and XLSX files share validation and analytics. The XLSX template contains exactly two tabs: Meetings and How to Use ClubPulse. See GOOGLE-SHEETS-SETUP.md.
+Home offers Analyze My Club and Explore Demo. The import page offers direct meeting entry first, followed by spreadsheet upload and templates. Both paths open the same editable, automatically saved meeting table. Demo has a short introduction followed by one continuous walkthrough with an inline planner and an isolated sample workspace; leaving Demo restores the user's own data. Google Sheets uses export/upload, not live OAuth sync. CSV and XLSX files share validation and analytics. The XLSX template contains exactly two tabs: Meetings and How to Use ClubPulse. See GOOGLE-SHEETS-SETUP.md.
 
 Template fields: required date and attendance; recommended new_members, returning_members, meeting_type, topic, meeting_time, promotion_channels; optional instagram_reach, days_promoted_before, signups_before_meeting, special_event, notes. Replace all three fictional example rows. Count discrepancies warn without rewriting the submitted values.
 
 Coverage shows which analyses have sufficient usable fields. Highlights and demo explanations use calculated values. Returning-attendee share, promotion lead time, recent formats and signup ratios now inform the analyst. Returning share is not cohort retention; correlations are not causal claims.
 
 See DEPLOYMENT.md for the free Netlify subdomain path, production configuration and inactive OAuth setup requirements. The current app needs no environment variables. No custom domain has been purchased.
+
+## Product refinement
+
+The Home → Your Data → Insights → Next Meeting journey now shares a calmer visual system. Next Meeting saves planning choices locally; demo practice plans remain isolated in tab memory. See PRODUCT-REFINEMENT.md for the UX changes, actual validation and remaining limits.
 
 ## Features
 
@@ -66,7 +70,7 @@ The regression suite covers CSV parsing, aliases, missing fields, invalid values
 
 ## Remaining limitations
 
-Your meeting records and unfinished drafts are saved in this browser on this device. Clearing browser storage removes them; export a CSV for a backup. Data is not synchronized between devices. There is no real weekly scheduler, email delivery, server persistence, configured LLM or saved pre-meeting prediction workflow. The report and Meeting Pulse modules expose integration boundaries for those future capabilities. The English intent router supports a bounded set of analytics questions. No sensitive profiling or person-level recommendations are produced. Charts and comparisons are descriptive and cannot establish causes. Promotion combinations are compared as recorded strategies, not isolated channel effects. Use reach measured before the meeting; the app cannot verify when a supplied value was measured.
+Your meeting records and unfinished drafts are saved in this browser on this device. Clearing browser storage removes them; export a CSV for a backup. Data is not synchronized between devices. There is no real weekly scheduler, email delivery, server persistence, configured LLM or automatic saved-prediction comparison. The report and Meeting Pulse modules expose integration boundaries for those future capabilities. The English intent router supports a bounded set of analytics questions. No sensitive profiling or person-level recommendations are produced. Charts and comparisons are descriptive and cannot establish causes. Promotion combinations are compared as recorded strategies, not isolated channel effects. Use reach measured before the meeting; the app cannot verify when a supplied value was measured.
 
 
 Built with substantial OpenAI Codex assistance. This implementation uses browser JavaScript, not Python/Streamlit. Demo data is fictional and is not evidence of measured real-club impact.
