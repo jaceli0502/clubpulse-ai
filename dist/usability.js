@@ -24,10 +24,6 @@ export function improveNavigation({page,rows,isDemo,ready,outputs,escape:esc}){
     root.querySelectorAll('.metric-label').forEach(label=>{if(label.textContent.includes('Recent momentum'))label.firstChild.textContent='Attendance trend'});
     const question=document.querySelector('#club-question');question.placeholder='For example: Why did attendance drop?';
   }
-  if(page==='data'){
-    root.querySelector('.page-heading').insertAdjacentHTML('afterend',dataChoices());
-    root.querySelectorAll('.upload-choice').forEach(b=>b.onclick=()=>{const section=root.querySelector('#import-section');section.open=true;const file=root.querySelector('#csv-file');file.accept=b.dataset.format;file.click()});
-  }
   if(page==='predict'){
     const intro=root.querySelector('.page-heading p');if(intro)intro.textContent=ready?'Try different meeting setups and see what your club history suggests.':`You have ${rows.length} meeting${rows.length===1?'':'s'}. Add more history to unlock a useful estimate.`;
     const back=document.createElement('a');back.href='#overview';back.className='text-link back-link';back.textContent='← Back to my dashboard';root.prepend(back);

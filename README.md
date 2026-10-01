@@ -4,7 +4,7 @@ The existing static HTML/CSS/ES-module application and Import / Demo home were p
 
 ## September UX and data upgrade
 
-Home offers Analyze My Club and Explore Demo. The import page puts spreadsheet upload first, with Google Sheets, Excel and CSV templates below. Demo uses an isolated workspace; leaving Demo restores the user's in-tab data. Google Sheets uses export/upload, not live OAuth sync. CSV and XLSX files share validation and analytics. The XLSX template contains exactly two tabs: Meetings and How to Use ClubPulse. See GOOGLE-SHEETS-SETUP.md.
+Home offers Analyze My Club and Explore Demo. The import page offers direct meeting entry first, followed by spreadsheet upload and templates. Both paths open the same editable, automatically saved meeting table. Demo is one continuous walkthrough with an inline planner and an isolated sample workspace; leaving Demo restores the user's own data. Google Sheets uses export/upload, not live OAuth sync. CSV and XLSX files share validation and analytics. The XLSX template contains exactly two tabs: Meetings and How to Use ClubPulse. See GOOGLE-SHEETS-SETUP.md.
 
 Template fields: required date and attendance; recommended new_members, returning_members, meeting_type, topic, meeting_time, promotion_channels; optional instagram_reach, days_promoted_before, signups_before_meeting, special_event, notes. Replace all three fictional example rows. Count discrepancies warn without rewriting the submitted values.
 
@@ -60,13 +60,13 @@ node scripts/check-build.mjs
 node --check dist/app.js
 ```
 
-Open http://127.0.0.1:4173. There are no npm dependencies or required environment variables. Production is the existing https://clubpulse-ai.netlify.app/ site. `netlify.toml` runs the production checks and publishes `dist`; `.node-version` pins Node 24. Git continuous deployment is not connected yet. See REPOSITORY-SETUP.md for the inspected setup and remaining blockers.
+Open http://127.0.0.1:4173. There are no npm dependencies or required environment variables. Production is the existing https://clubpulse-ai.netlify.app/ site. `netlify.toml` runs the production checks and publishes `dist`; `.node-version` pins Node 24. GitHub main is connected to the existing Netlify site for continuous deployment.
 
 The regression suite covers CSV parsing, aliases, missing fields, invalid values, duplicate removal, cohort eligibility, zero denominators, anomalous attendance, chronological forecast restrictions, baseline fallbacks, Meeting Pulse, health thresholds, router/tool restrictions, provider fallback, sparse-data honesty and report changes. Browser checks and publication status are reported in the delivery message.
 
 ## Remaining limitations
 
-Data lives in the current tab's memory. Refreshing loses it; export a CSV to retain records. There is no real weekly scheduler, email delivery, server persistence, configured LLM or saved pre-meeting prediction workflow. The report and Meeting Pulse modules expose integration boundaries for those future capabilities. The English intent router supports a bounded set of analytics questions. No sensitive profiling or person-level recommendations are produced. Charts and comparisons are descriptive and cannot establish causes. Promotion combinations are compared as recorded strategies, not isolated channel effects. Use reach measured before the meeting; the app cannot verify when a supplied value was measured.
+Your meeting records and unfinished drafts are saved in this browser on this device. Clearing browser storage removes them; export a CSV for a backup. Data is not synchronized between devices. There is no real weekly scheduler, email delivery, server persistence, configured LLM or saved pre-meeting prediction workflow. The report and Meeting Pulse modules expose integration boundaries for those future capabilities. The English intent router supports a bounded set of analytics questions. No sensitive profiling or person-level recommendations are produced. Charts and comparisons are descriptive and cannot establish causes. Promotion combinations are compared as recorded strategies, not isolated channel effects. Use reach measured before the meeting; the app cannot verify when a supplied value was measured.
 
 
 Built with substantial OpenAI Codex assistance. This implementation uses browser JavaScript, not Python/Streamlit. Demo data is fictional and is not evidence of measured real-club impact.

@@ -1,16 +1,5 @@
 // Reorganize existing controls without introducing another application state layer.
 export function calmView({page,root,rows}){
-  if(page==='data'){
-    root.querySelector('.entry-guide')?.remove();
-    root.querySelector('.import-sheets')?.remove();
-    const entry=root.querySelector('.entry-layout');
-    if(entry){const detail=document.createElement('details');detail.className='manual-entry section-gap';detail.innerHTML='<summary>Or add a meeting manually</summary>';entry.replaceWith(detail);detail.append(entry);refineEntry(root.querySelector('#simple-entry'))}
-    const importer=root.querySelector('#import-section');
-    if(importer){importer.querySelector('#template')?.remove();importer.querySelector('summary').textContent='Upload a file';if(page==='data')importer.open=false;importer.querySelector('.entry-actions')?.remove()}
-    const help=document.createElement('details');help.className='format-help';help.innerHTML='<summary>How should I format my data?</summary><p>One row per meeting. Date uses YYYY-MM-DD or M/D/YYYY; attendance is a whole number. Leave unknown optional fields blank.</p><p>Use + between promotion channels. Replace the three fictional examples. Excel files should contain a Meetings tab.</p><a href="templates/clubpulse-template.xlsx" download>Download the complete template</a>';
-    root.querySelector('.data-minimum')?.replaceWith(help);
-    const clear=root.querySelector('#clear-data');if(clear){const more=document.createElement('details');more.className='data-more';more.innerHTML='<summary>More</summary>';clear.replaceWith(more);more.append(clear);clear.textContent='Clear workspace'}
-  }
   if(page==='overview'){
     root.querySelector('.notice')?.remove();
     root.querySelector('.page-heading h1').textContent='What should I notice?';root.querySelector('#notice-story > h2')?.remove();
