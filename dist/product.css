@@ -111,3 +111,6 @@ table{font-variant-numeric:tabular-nums}th{color:var(--color-text-muted)}
 .back-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:8px}.source-meta{margin-bottom:16px}.plan-controls .channel-options label:has(input:focus-visible){outline:3px solid var(--color-brand);outline-offset:3px}
 @media(max-width:900px){.meeting-editor .editor-main-row td:first-child{grid-column:1/-1}}@media(max-width:600px){.sidebar nav>a>span{display:none}.sidebar nav{gap:2px}.sidebar nav>a{padding-inline:6px}.sidebar nav .workspace-more{margin-left:auto}.workspace-more>summary{font-size:12px;padding-inline:4px}.demo-entry{margin-top:0}}
 @media(max-width:800px){.demo-context{position:sticky;top:0;z-index:25}.demo-mode .plan-controls,.demo-mode .plan-feedback{scroll-margin-top:100px}}
+
+/* Shared navigation uses the exact SVG from the unchanged favicon. */
+.brand{gap:9px;align-items:center}.brand img.brand-icon{display:block;width:28px;height:28px;flex:0 0 28px;object-fit:contain;border-radius:0;background:none}
