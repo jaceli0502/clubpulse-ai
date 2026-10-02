@@ -1,3 +1,4 @@
+import {browserStorage} from './browser-storage.js';
 import {esc,promotionFields,promotionTimingField,formRecord,normalizePlan,planningEvidence} from './clarity.js';
 import {MEETING_TYPES,MEETING_TIMES} from './meeting-options.js';
 import {modelReport,predict} from './analytics.js';
@@ -6,7 +7,7 @@ import {fmt} from './analytics/stats.js';
 import {applyRecommendationPreset} from './next-action.js';
 import {loadPlan,savePlan,cleanPlan} from './plan-store.js';
 const drafts={user:null,demo:null};
-const storage={getItem:k=>localStorage.getItem(k),setItem:(k,v)=>localStorage.setItem(k,v)};
+const storage=browserStorage;
 export function mountPlanner(root,{rows,demo=false,preset=null}){
  const mode=demo?'demo':'user',report=modelReport(rows),typical=forecastAttendance(rows).typicalSetup||{};
  const loaded=!demo&&!drafts.user?loadPlan(storage):{plan:null,error:null};

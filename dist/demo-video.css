@@ -1,0 +1,25 @@
+.demo-video-shell{margin:0;background:#f7f8f5;overflow:hidden;color:#183d32}
+.video-stage{position:fixed;inset:0;padding:0!important;max-width:none!important}
+.video-product{position:absolute;inset:0 0 146px;width:100%;height:calc(100% - 146px);border:0;background:#f7f8f5}
+.video-cover{position:absolute;inset:0;z-index:3;background:#f7f8f5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8vw}
+.video-cover[hidden],.video-caption[hidden],.video-controls[hidden]{display:none}
+.video-brand{display:flex;align-items:center;gap:18px;font:600 46px Manrope,sans-serif;letter-spacing:-1.7px}
+.video-brand img{flex:0 0 64px}.video-brand small{font-size:22px;font-weight:400}
+.video-cover h1{font:500 clamp(36px,4.2vw,78px)/1.15 Manrope,sans-serif;letter-spacing:-2px;max-width:1150px;margin:30px 0}
+.video-kicker{font:500 14px 'DM Sans',sans-serif;letter-spacing:3px;margin-top:55px;color:#597066}
+.video-cover-note{font-size:16px;color:#6a7770;margin-top:34px}
+.video-caption{position:absolute;bottom:0;left:0;right:0;height:146px;background:#183d32;color:#fff;padding:25px 7vw;box-sizing:border-box;z-index:4}
+.video-chapter{font-size:11px;letter-spacing:2px;color:#c4fa80}.video-caption p{font:500 clamp(20px,2vw,35px)/1.3 Manrope,sans-serif;margin:9px 0;letter-spacing:-.5px}
+.video-progress{position:absolute;bottom:0;left:0;height:3px;background:#c4fa80;z-index:5}
+.video-controls{position:fixed;top:12px;right:18px;z-index:10;display:flex;gap:8px;align-items:center;padding:8px 12px;background:#fff;border:1px solid #d9e3db;border-radius:12px;font-size:12px;box-shadow:0 4px 14px #183d3210}
+.video-controls button{padding:6px 12px;background:#eef3ed;border:0;border-radius:7px;color:#183d32;cursor:pointer}.video-controls a{color:inherit}.video-error{position:fixed;z-index:20;top:60px;left:20px;background:#fff;padding:20px;color:#922}
+.video-session .sidebar{position:static!important}.video-session .demo-context{position:static!important}.video-session .topbar,.video-session .main-footer,.video-session .workspace-more{display:none!important}
+.video-session main{padding-top:24px;padding-bottom:140px}.video-session .attendance-plot{height:285px}.video-session .meeting-inspector{padding:20px}.video-session .inspector-help,.video-session .inspector-notes{display:none}
+.video-session .video-focus{scroll-margin-top:28px}.video-session .meeting-inspector.video-focus{outline:2px solid #b8d4bc;outline-offset:6px}
+.video-session .demo-planner .plan-feedback{padding:24px}.video-session .plan-evidence{margin-top:16px}.video-session .plan-evidence>p{margin:10px 0}.video-session .plan-turnout{margin-top:14px;padding-top:14px}
+.video-session .ask-disclosure{padding:24px}.video-session .demo-planner{padding-top:0}
+@media(max-width:800px){.video-caption{padding:20px 24px}.video-brand{font-size:32px}.video-cover h1{letter-spacing:-1px}.video-controls{top:4px;right:4px}}
+@media(prefers-reduced-motion:no-preference){.video-caption p,.video-cover h1{animation:video-in .45s ease-out}.video-session .video-focus{transition:outline-color .4s}}
+@keyframes video-in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.video-caption p{color:#fff}.video-session .demo-planner:focus{outline:none}.video-session[data-video-scene="recommendation"] .next-action{margin-bottom:500px;padding:48px}.video-session[data-video-scene="recommendation"] .next-action h2{font-size:42px}
